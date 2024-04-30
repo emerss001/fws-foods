@@ -1,12 +1,7 @@
-const name = "";
-console.log(name);
+import Header from "./_components/header";
 
 const Home = () => {
-  return (
-    <div className="bg-slate-900 px-2">
-      <h1>Helo Word!</h1>
-    </div>
-  );
+  return <Header />;
 };
 
 export default Home;
