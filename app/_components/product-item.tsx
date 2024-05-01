@@ -52,7 +52,6 @@ const ProductItem = ({ product }: ProductItemProps) => {
           {product.restaurant.name}
         </p>
       </div>
-      <br />
     </div>
   );
 };
