@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# FSWFoods
 
-## Getting Started
+O FSWFoods é um sistema inspirado no iFood, projetado para facilitar a conexão entre usuários e restaurantes, permitindo pedidos de comida de forma simples e intuitiva.
 
-First, run the development server:
+Acesse a aplicação online: [FSWFoods](https://fws-foods.vercel.app/)
+
+## Tecnologias Utilizadas 🚀
+
+- Next.js: Framework React para criação de aplicações web modernas.
+
+- Prisma: ORM para gerenciamento e integração com banco de dados.
+
+- Tailwind CSS: Biblioteca de estilos utilitários para design responsivo e customizado.
+
+- NextAuth.js: Biblioteca de autenticação para o framework Next.js
+
+## Funcionalidades 📑
+
+- Realizar login por meio do Google
+- Exibir os restaurantes e seus produtos
+- Criar e acompanhar os pedidos
+- Adicionar restaurantes aos favoritos
+- Pesquisar por restaurantes
+
+## Como Executar 🛠️
+
+#### Pré-requisitos
+
+- [Node.js](https://fws-foods.vercel.app/)
+- [Docker](https://fws-foods.vercel.app/)
+
+#### Passos para Instalação
+
+1 - Clone o repositório:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  git clone https://github.com/emerss001/fws-foods.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2 - Instale as dependências:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+  npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3 - Execute o banco de dados com Docker:
 
-## Learn More
+```bash
+  docker compose up -d
+```
 
-To learn more about Next.js, take a look at the following resources:
+4 - Configure o ambiente:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Crie um arquivo ` .env` na raiz do projeto.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Configure as variáveis de ambiente necessárias:
 
-## Deploy on Vercel
+```dotenv
+DATABASE_URL="mysql://user:password@localhost:3306/fswfoods"
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+GOOGLE_CLIENT_ID="sua-client-id.apps.googleusercontent.com"
+GOOGLE_CLIENT_SECRET="seu-client-secret"
+NEXTAUTH_SECRET="uma-chave-secreta"
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+As variáveis do **Google** devem ser configuradas para o **login funcionar**
+
+Você deve configurar seu projeto no [Google Cloud](https://console.cloud.google.com/)
+
+5 - Execute as migrações do banco de dados:
+
+```bash
+  npx prisma migrate dev
+```
+
+6 - Povoar o banco de dados com a seed do prisma:
+
+```bash
+  npx prisma db seed
+```
+
+7 - Executar localmente:
+
+```bash
+  npm run dev
+```
+
+Acesse pelo navegador [http://localhost:3000](http://localhost:3000)
