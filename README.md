@@ -86,3 +86,8 @@ Você deve configurar seu projeto no [Google Cloud](https://console.cloud.google
 ```
 
 Acesse pelo navegador [http://localhost:3000](http://localhost:3000)
+
+
+---
+
+Feito por [Emerson Neves](https://www.devemerson.site)
